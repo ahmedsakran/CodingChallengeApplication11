@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/imagesListFragment">
+
+    <fragment
+        android:id="@+id/imagesListFragment"
+        android:name="group.payback.codingchallengeapplication.presentation.ui.imagesList.ImagesListFragment"
+        android:label="fragment_images_list"
+        tools:layout="@layout/fragment_images_list" >
+        <action
+            android:id="@+id/action_imagesListFragment_to_imageDetailsFragment"
+            app:destination="@id/imageDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageDetailsFragment"
+        android:name="group.payback.codingchallengeapplication.presentation.ui.imageDetails.ImageDetailsFragment"
+        android:label="fragment_image_details"
+        tools:layout="@layout/fragment_image_details" >
+        <argument
+            android:name="imageID"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="hit"
+            app:argType="group.payback.codingchallengeapplication.domain.models.Hit" />
+    </fragment>
+</navigation>
